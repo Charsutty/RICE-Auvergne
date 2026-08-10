@@ -1,0 +1,10 @@
+################################################################################
+# RICE: Auvergne — Scripted Triggers
+#
+# Naming convention: AUV_<purpose>_trigger
+#
+# Geographic triggers must be based on verified CK3 title/province mapping.
+################################################################################
+
+# Example placeholder only; do not call until implemented.
+# AUV_is_in_core_auvergne_trigger = { ... }
