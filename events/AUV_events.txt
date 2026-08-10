@@ -1,0 +1,18 @@
+namespace = auvergne
+
+################################################################################
+# RICE: Auvergne — Core Events
+#
+# Event ranges (working convention):
+# 0001–0999  setup / generic
+# 1000–1999  Clermont and political authority
+# 2000–2999  Mercœur / Saugues / highland frontier
+# 3000–3999  religious networks
+# 4000–4999  Dauphins and dynastic content
+# 5000–5999  court culture / troubadours
+#
+# Keep historical claims documented under docs/research before implementation.
+################################################################################
+
+# Intentionally empty in the initial scaffold.
+# First vertical-slice events will be added after CK3 title mapping is verified.
