@@ -1,10 +1,51 @@
-################################################################################
-# RICE: Auvergne — Scripted Triggers
+﻿################################################################################
 #
-# Naming convention: AUV_<purpose>_trigger
+# RICE: Auvergne — SCRIPTED TRIGGERS
 #
-# Geographic triggers must be based on verified CK3 title/province mapping.
+# Keep these additive and title-based. The submod does not alter landed titles,
+# province history, de jure structure, or the vanilla map.
+#
 ################################################################################
 
-# Example placeholder only; do not call until implemented.
-# AUV_is_in_core_auvergne_trigger = { ... }
+# Broad gameplay scope for Auvergne flavor.
+# The duchy is the main anchor; neighboring counties are included only where
+# their historical networks overlap with Auvergne content.
+AUV_is_in_flavor_scope_trigger = {
+	OR = {
+		has_title = title:d_auvergne
+		has_title = title:c_auvergne
+		has_title = title:c_clermont_sur_allier
+		has_title = title:c_thiers
+		has_title = title:c_velay
+		has_title = title:c_gevaudan
+	}
+}
+
+# Narrow scope for the Upper Allier / Mercœur-facing flavor cluster.
+# This deliberately uses existing vanilla counties rather than introducing a
+# Saugues or Mercœur map title.
+AUV_controls_upper_allier_scope_trigger = {
+	OR = {
+		has_title = title:c_velay
+		has_title = title:c_gevaudan
+	}
+}
+
+# Used by the first repeatable regional decision.
+AUV_can_secure_upper_allier_routes_trigger = {
+	AUV_controls_upper_allier_scope_trigger = yes
+	OR = {
+		AND = {
+			has_title = title:c_velay
+			title:c_velay = {
+				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+			}
+		}
+		AND = {
+			has_title = title:c_gevaudan
+			title:c_gevaudan = {
+				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+			}
+		}
+	}
+}
