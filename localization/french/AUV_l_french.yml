@@ -2,16 +2,108 @@
  AUV_MOD_NAME:0 "RICE : Auvergne"
  AUV_MOD_DESC:0 "Du contenu régional pour l'Auvergne médiévale et les hautes terres qui lui sont liées."
 
- # Décisions
- AUV_secure_upper_allier_routes_decision:0 "Sécuriser les routes du Haut-Allier"
- AUV_secure_upper_allier_routes_decision_desc:0 "Les hautes terres entre le Velay et le Gévaudan reposent sur des routes difficiles, des passages de rivière, des forteresses et des droits locaux. Investir dans ces voies permet d'y renforcer l'autorité sans prétendre en faire une unité politique distincte."
+ # Décisions — Counts and Crosiers
+ AUV_negotiate_clermont_authority_decision:0 "Négocier l'autorité à Clermont"
+ AUV_negotiate_clermont_authority_decision_desc:0 "Autour de Clermont, le commandement comtal n'est jamais la seule source d'autorité publique. L'Église possède ses privilèges, ses clients, ses terres et ses propres prétentions au maintien de la paix. Un accord avec le clergé pourrait stabiliser le comté — ou révéler quelle parole y fait réellement loi."
+ AUV_has_available_court_chaplain_req:0 "Vous disposez d'un [court_chaplain|El] disponible"
+ AUV_negotiate_clermont_authority_effect_tooltip:0 "Vous choisirez l'équilibre entre autorités comtale et ecclésiastique autour de Clermont pour les dix prochaines années."
 
- # Modificateurs
+ # Décisions — The Divided House
+ AUV_address_comital_succession_decision:0 "Régler la succession comtale"
+ AUV_address_comital_succession_decision_desc:0 "Les prétentions au sein de la maison comtale peuvent être étouffées, conciliées ou reconnues. Ce qui sera consigné aujourd'hui décidera peut-être si l'Auvergne demeure sous une seule lignée ou devient l'héritage de branches rivales."
+ AUV_address_comital_succession_effect_tooltip:0 "Votre choix établira un état dynastique persistant pour la future chaîne de La Maison divisée ; aucun titre ni branche cadette ne sera encore créé."
+
+ # Décisions — Saints and Patrons
+ AUV_patronize_auvergnat_institution_decision:0 "Patronner une institution auvergnate"
+ AUV_patronize_auvergnat_institution_decision_desc:0 "Les grandes églises et abbayes d'Auvergne conservent les chartes, forment le clergé aristocratique, prient pour leurs bienfaiteurs et relient les maisons locales à de plus vastes réseaux religieux. Un patronage durable peut faire de l'une de ces institutions une partenaire de ma dynastie."
+ AUV_patronize_auvergnat_institution_decision_tooltip:0 "Établir pour dix ans une relation de patronage avec une institution religieuse auvergnate documentée."
+ AUV_patronize_auvergnat_institution_effect_tooltip:0 "Vous choisirez entre Saint-Julien de Brioude et, après 1043, La Chaise-Dieu."
+
+ # Décisions — Lords of the High Country
+ AUV_secure_upper_allier_routes_decision:0 "Sécuriser les routes du Haut-Allier"
+ AUV_secure_upper_allier_routes_decision_desc:0 "Les hautes terres entre le Velay et le Gévaudan reposent sur des routes difficiles, des passages de rivière, des forteresses et des droits locaux. Le corridor peut être sécurisé par l'investissement direct, des péages plus stricts ou un accord négocié."
+ AUV_secure_upper_allier_routes_effect_tooltip:0 "Vous choisirez comment gouverner les passages, les fortifications et les droits locaux du Haut-Allier pour les dix prochaines années."
+
+ # Modificateurs — Counts and Crosiers
+ AUV_clermont_ecclesiastical_compact_modifier:0 "Accord avec la crosse"
+ AUV_clermont_ecclesiastical_compact_modifier_desc:0 "Ce dirigeant a confirmé les privilèges ecclésiastiques autour de Clermont et associé le clergé au maintien de l'ordre."
+ AUV_clermont_comital_ascendancy_modifier:0 "Ascendant comtal à Clermont"
+ AUV_clermont_comital_ascendancy_modifier_desc:0 "Ce dirigeant a affirmé la juridiction comtale face aux prétentions ecclésiastiques concurrentes autour de Clermont."
+ AUV_clermont_balanced_authority_modifier:0 "Autorité équilibrée à Clermont"
+ AUV_clermont_balanced_authority_modifier_desc:0 "Un compromis écrit a réparti les responsabilités entre le dirigeant et le clergé sans mettre fin à leur rivalité."
+ AUV_clermont_privileges_county_modifier:0 "Privilèges ecclésiastiques confirmés"
+ AUV_clermont_privileges_county_modifier_desc:0 "La reconnaissance des droits de l'Église renforce la coopération locale, bien que certains revenus échappent toujours au pouvoir comtal direct."
+ AUV_clermont_jurisdiction_county_modifier:0 "Juridiction comtale affirmée"
+ AUV_clermont_jurisdiction_county_modifier_desc:0 "Les officiers imposent plus clairement les droits comtaux sur les revenus et l'ordre public, suscitant une certaine résistance locale."
+ AUV_clermont_compromise_county_modifier:0 "Accord juridictionnel de Clermont"
+ AUV_clermont_compromise_county_modifier_desc:0 "Les officiers comtaux et les représentants ecclésiastiques agissent selon une répartition négociée des droits."
+
+ # Modificateurs — The Divided House
+ AUV_comital_house_compact_modifier:0 "Pacte de la maison comtale"
+ AUV_comital_house_compact_modifier_desc:0 "La dynastie s'est engagée à préserver un règlement comtal unique en Auvergne. Des événements futurs pourront encore éprouver cette unité."
+ AUV_divided_house_foundation_modifier:0 "Prétentions auvergnates concurrentes"
+ AUV_divided_house_foundation_modifier_desc:0 "La dynastie a officiellement consigné des prétentions rivales sur l'héritage comtal. Ceci fonde techniquement un futur conflit de branches, mais ne constitue pas encore un titre de Dauphin."
+
+ # Modificateurs — Saints and Patrons
+ AUV_brioude_patron_modifier:0 "Protecteur de Saint-Julien de Brioude"
+ AUV_brioude_patron_modifier_desc:0 "Ce dirigeant soutient le chapitre aristocratique de Brioude et bénéficie de ses prières, de son prestige et de ses réseaux dynastiques."
+ AUV_brioude_cartulary_modifier:0 "Conseils du cartulaire de Brioude"
+ AUV_brioude_cartulary_modifier_desc:0 "La mémoire documentaire du chapitre offre des précédents utiles pour ordonner droits, donations et obligations aristocratiques."
+ AUV_chaise_dieu_patron_modifier:0 "Protecteur de La Chaise-Dieu"
+ AUV_chaise_dieu_patron_modifier_desc:0 "Ce dirigeant soutient la jeune communauté réformatrice fondée par Robert de Turlande."
+ AUV_chaise_dieu_expansion_modifier:0 "Soutien au réseau casadéen"
+ AUV_chaise_dieu_expansion_modifier_desc:0 "Ce dirigeant aide La Chaise-Dieu à étendre son réseau de dépendances et de relations au-delà de sa première communauté."
+
+ # Modificateurs — Lords of the High Country
  AUV_upper_allier_routes_modifier:0 "Routes du Haut-Allier sécurisées"
  AUV_upper_allier_routes_modifier_desc:0 "Routes, passages et fortifications locales ont reçu une attention soutenue, facilitant l'administration de ces hautes terres difficiles."
+ AUV_upper_allier_tolls_modifier:0 "Péages du Haut-Allier renforcés"
+ AUV_upper_allier_tolls_modifier_desc:0 "Péages et redevances sont perçus plus rigoureusement le long du corridor montagnard, augmentant les revenus au détriment de la bonne volonté locale."
+ AUV_upper_allier_compact_modifier:0 "Accord des hautes terres"
+ AUV_upper_allier_compact_modifier_desc:0 "La médiation du clergé et la reconnaissance des droits locaux ont assuré la coopération le long du Haut-Allier."
 
- # Événements
+ # Événements — Counts and Crosiers
+ auvergne.1000.t:0 "Le comte et la crosse"
+ auvergne.1000.desc:0 "Les représentants des églises de Clermont arrivent munis de chartes, de témoins et d'une longue mémoire de leurs privilèges. Mes officiers leur opposent les droits de la justice comtale et la nécessité d'une main unique pour maintenir la paix. Nul ne conteste le besoin d'ordre ; le litige porte sur l'autorité qui l'assurera."
+ auvergne.1000.a:0 "Confirmer les privilèges de l'Église."
+ auvergne.1000.b:0 "La justice comtale doit prévaloir."
+ auvergne.1000.c:0 "Consignons chaque droit dans un accord commun."
+ auvergne.1000.info:0 "Contexte historique : les évêques de Clermont étaient des acteurs politiques majeurs, et non de simples conseillers spirituels. Étienne II, issu de l'aristocratie locale, participa à la politique royale et régionale ainsi qu'au milieu de la Paix de Dieu à la fin du Xe siècle. L'accord précis présenté ici relève d'une fiction ludique représentative."
+ auvergne.1001.t:0 "L'accord mis à l'épreuve"
+ auvergne.1001.desc.privileges:0 "Des années de coopération avec les églises ont intégré leurs privilèges au gouvernement concret de Clermont. Mes officiers déplorent les revenus concédés, mais les conflits locaux parviennent désormais aux médiateurs ecclésiastiques avant de dégénérer en guerres ouvertes."
+ auvergne.1001.desc.jurisdiction:0 "Mes officiers ont rendu la justice comtale visible dans tout le pays de Clermont. Les revenus arrivent plus régulièrement, mais chaque acte de juridiction rappelle au clergé que ses anciennes prétentions n'ont pas été oubliées."
+ auvergne.1001.desc.compromise:0 "L'accord a survécu parce qu'aucun camp n'a obtenu tout ce qu'il désirait. Officiers comtaux et gens d'Église invoquent les mêmes clauses — généralement pour en donner des interprétations fort différentes."
+ auvergne.1001.a:0 "L'autorité est une pratique, non une proclamation."
+
+ # Événements — Lords of the High Country
  auvergne.2000.t:0 "Les routes des hautes terres"
- auvergne.2000.desc:0 "Les voies qui longent le Haut-Allier ne sont pas de simples chemins entre des habitats isolés. Elles relient vallées, passages, places fortifiées et seigneuries dont la coopération est indispensable pour que l'autorité atteigne les hautes terres. Grâce aux dépenses consacrées aux escortes, aux réparations et aux accords avec les hommes du pays, le passage est devenu plus sûr."
- auvergne.2000.a:0 "Les routes doivent rester ouvertes."
- auvergne.2000.info:0 "Contexte historique : les environs de Saugues appartenaient à un espace frontalier lié à la seigneurie de Mercœur. Les sources documentaires et archéologiques témoignent de nombreux sites fortifiés et de voies contrôlant les accès entre Velay, Gévaudan, Margeride et hautes terres auvergnates voisines."
+ auvergne.2000.desc:0 "Les voies qui longent le Haut-Allier relient vallées, passages, places fortifiées et seigneuries. Escortes et réparations fiabiliseraient le voyage ; des péages plus fermes rendraient le corridor profitable ; la reconnaissance des droits locaux pourrait plutôt gagner la coopération des châtelains et des communautés."
+ auvergne.2000.a:0 "Financer escortes, réparations et sûreté du passage."
+ auvergne.2000.b:0 "Les passages acquitteront toutes leurs redevances."
+ auvergne.2000.c:0 "Que le clergé négocie un accord sur les droits locaux."
+ auvergne.2000.info:0 "Contexte historique : les environs de Saugues appartenaient à un espace frontalier lié à la seigneurie de Mercœur. Les sources documentaires et archéologiques témoignent de sites fortifiés et de voies contrôlant les accès entre Velay, Gévaudan, Margeride et hautes terres auvergnates voisines. Ces trois politiques sont des issues représentatives, non l'affirmation d'un décret documenté."
+
+ # Événements — Saints and Patrons
+ auvergne.3000.t:0 "Saints et protecteurs"
+ auvergne.3000.desc:0 "Un don à une institution religieuse n'achète ni sainteté ni obéissance. Il crée une relation : des prières pour ma maison, un lieu de formation et de mémoire aristocratiques, et une alliée dont les droits pourront un jour heurter les miens. Quelle communauté doit recevoir un soutien durable ?"
+ auvergne.3000.a:0 "Soutenir Saint-Julien de Brioude."
+ auvergne.3000.b:0 "Soutenir la jeune maison de La Chaise-Dieu."
+ auvergne.3000.info:0 "Contexte historique : Saint-Julien de Brioude était un grand centre aristocratique et canonial, doté d'une tradition documentaire exceptionnellement riche aux IXe et Xe siècles. La Chaise-Dieu fut fondée par Robert de Turlande en 1043 et connut une expansion rapide dans le mouvement réformateur du XIe siècle. Les offres présentées ici représentent le patronage sans reproduire une donation précise."
+ auvergne.3001.t:0 "La mémoire de Brioude"
+ auvergne.3001.desc:0 "Les chanoines de Saint-Julien savent qu'un bienfaiteur attend plus que de la gratitude. Ils peuvent conserver ma maison dans leurs prières et commémorations, ou ouvrir leur trésor de chartes pour montrer comment les anciens comtes et nobles ordonnaient dons, droits et obligations."
+ auvergne.3001.a:0 "Que ma maison demeure dans leurs prières."
+ auvergne.3001.b:0 "Sortez les chartes ; les anciens précédents ont encore force."
+ auvergne.3002.t:0 "Une maison qui commence à essaimer"
+ auvergne.3002.desc:0 "La communauté de La Chaise-Dieu n'est plus seulement un rassemblement isolé autour de son fondateur. Les frères évoquent de nouvelles dépendances et des relations au-delà de la première maison. Mon patronage peut aider ce réseau à croître, ou demeurer consacré à la prière et à la commémoration dans la maison mère."
+ auvergne.3002.a:0 "Aider la communauté à nouer des liens plus vastes."
+ auvergne.3002.b:0 "Que mon don entretienne la prière dans la maison mère."
+
+ # Événements — The Divided House
+ auvergne.4000.t:0 "L'héritage de l'Auvergne"
+ auvergne.4000.desc:0 "Les droits de notre maison comtale sont décrits comme un héritage unique, mais la parenté, les mariages et les prétentions concurrentes le tirent dans plusieurs directions. Un pacte pourrait préserver un seul règlement. Consigner les prétentions rivales réduirait l'incertitude immédiate, mais fournirait aux générations futures les mots nécessaires pour réclamer un partage."
+ auvergne.4000.a:0 "Lier la maison à un règlement unique."
+ auvergne.4000.b:0 "Consigner les prétentions concurrentes."
+ auvergne.4000.info:0 "Contexte historique : au XIIe siècle, la maison comtale se divisa entre deux Guillaume. La lignée aînée conserva le titre comtal, tandis que les descendants de la branche cadette adoptèrent progressivement l'identité de Dauphin. Le partage territorial exact et sa chronologie diplomatique exigent encore des recherches ; cette fondation ne crée donc aucun titre ni branche prédéterminée."
+ auvergne.4001.t:0 "Les prétentions consignées"
+ auvergne.4001.desc:0 "Les scribes n'ont produit aucun partage net, seulement un document durable attestant que plusieurs lignées peuvent réclamer une part de l'héritage auvergnat. Cette ambiguïté est dangereuse — mais elle est aussi la matière dont pourrait un jour naître une nouvelle identité dynastique."
+ auvergne.4001.a:0 "Que les générations futures disputent de ces mots."

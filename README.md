@@ -4,7 +4,7 @@ A historical flavor submod for **Crusader Kings III** and **RICE (Regional Immer
 
 ## Status
 
-Early development. The first compatibility-oriented gameplay slice is now implemented around the Upper Allier.
+Early development. A first Tier 1 vertical slice now connects Clermont's competing authorities, the technical foundation of the divided comital house, and the Upper Allier highland corridor.
 
 ## Core design rule
 
@@ -58,21 +58,16 @@ The submod follows RICE's additive scripting conventions and may directly use st
 
 See [`docs/design/RICE_INTEGRATION.md`](docs/design/RICE_INTEGRATION.md) for the compatibility contract.
 
-## First gameplay slice
+## First Tier 1 vertical slice
 
-The first implemented pattern is **Secure the Roads of the Upper Allier**.
+The first connected implementation includes:
 
-It deliberately demonstrates the intended architecture:
+- **Negotiate Authority at Clermont**, a recurring choice between ecclesiastical privileges, comital jurisdiction, and a negotiated compact;
+- **Address the Comital Succession**, a post-1100 dynasty-state foundation for the future Divided House chain without prematurely creating a Dauphin title or branch;
+- **Patronize an Auvergnat Institution**, a renewable relationship with Saint-Julien of Brioude or, after 1043, La Chaise-Dieu;
+- an expanded **Secure the Roads of the Upper Allier**, with investment, toll, and mediated-rights outcomes.
 
-- it targets existing vanilla `c_velay` and `c_gevaudan` scopes;
-- it adds no titles or provinces;
-- it uses a decision structure matching current RICE conventions;
-- it reuses RICE's availability helper trigger;
-- it adds only an AUV-owned modifier and event;
-- it respects RICE's historical-context game rule;
-- it has English and French localization.
-
-This is a technical and design reference implementation, not the final depth planned for Mercœur/Saugues content.
+All three use existing vanilla title scopes, additive AUV-owned script, current RICE decision/event conventions, the RICE availability helper, the historical-context game rule, and complete English/French localization. See [`docs/design/TIER1_VERTICAL_SLICE.md`](docs/design/TIER1_VERTICAL_SLICE.md) for evidence boundaries and research TODOs.
 
 ## Documentation
 

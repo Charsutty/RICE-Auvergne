@@ -2,6 +2,20 @@
 
 ## Unreleased — Content framework
 
+- Added the first connected Tier 1 vertical slice across **Counts and Crosiers**, **The Divided House**, and **Lords of the High Country**.
+- Added **Negotiate Authority at Clermont**, with three ten-year political settlements and a delayed consequence event.
+- Added **Address the Comital Succession**, gated to 1100 or later, using persistent dynasty modifiers as foundations for future unity and divided-house paths.
+- Expanded **Secure the Roads of the Upper Allier** into three historically grounded policy outcomes: route investment, toll enforcement, and mediated local rights.
+- Added the renewable **Patronize an Auvergnat Institution** decision using RICE's religious decision group and a ten-year cooldown.
+- Added Saint-Julien of Brioude patronage, dynastic commemoration, and cartulary-based counsel content available from early bookmarks.
+- Added La Chaise-Dieu patronage and expansion content gated to its documented 1043 foundation.
+- Deferred Aurillac patronage with an explicit research TODO rather than inventing an unsupported mechanic.
+- Added reusable AUV triggers and effects for Clermont, comital Auvergne, and Upper Allier state management.
+- Added complete English and French localization for the vertical slice.
+- Added `docs/design/TIER1_VERTICAL_SLICE.md` with evidence boundaries, implementation assumptions, in-game checks, and explicit research TODOs.
+- Aligned scripting patterns with RICE upstream commit `c1e8eb00ee8668b164692875d4c9d631cb895472`.
+- Added no map edits, title edits, `replace_path`, copied vanilla/RICE files, or DDS assets.
+
 - Added `docs/design/CONTENT_OBJECTIVES.md` as the canonical flavor-pack content strategy.
 - Defined six project objectives: fragmented authority, comital/Dauphin dynastic history, political religious institutions, highland lordship, emergent Auvergnat identity, and external regional connections.
 - Organized planned content into five modules: **Counts and Crosiers**, **The Divided House**, **Saints and Patrons**, **Lords of the High Country**, and **Courts of Auvergne**.

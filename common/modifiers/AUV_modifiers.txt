@@ -4,8 +4,116 @@
 #
 #################################################
 
+################################################################################
+# COUNTS AND CROSIERS
+################################################################################
+
+AUV_clermont_ecclesiastical_compact_modifier = {
+	icon = piety_positive
+	clergy_opinion = 10
+	monthly_piety = 0.1
+}
+
+AUV_clermont_comital_ascendancy_modifier = {
+	icon = prestige_positive
+	clergy_opinion = -10
+	domain_tax_mult = 0.03
+}
+
+AUV_clermont_balanced_authority_modifier = {
+	icon = diplomacy_positive
+	clergy_opinion = 5
+	vassal_opinion = 3
+}
+
+AUV_clermont_privileges_county_modifier = {
+	icon = piety_positive
+	development_growth = 0.1
+	county_opinion_add = 5
+	tax_mult = -0.03
+}
+
+AUV_clermont_jurisdiction_county_modifier = {
+	icon = prestige_positive
+	monthly_county_control_growth_add = 0.1
+	county_opinion_add = -3
+	tax_mult = 0.03
+}
+
+AUV_clermont_compromise_county_modifier = {
+	icon = diplomacy_positive
+	development_growth = 0.05
+	monthly_county_control_growth_add = 0.05
+	county_opinion_add = 3
+}
+
+################################################################################
+# THE DIVIDED HOUSE
+################################################################################
+
+# These dynasty modifiers are intentionally the persistent state interface for
+# a later, fully researched Dauphin chain. They do not create a title or branch.
+AUV_comital_house_compact_modifier = {
+	icon = family_positive
+	dynasty_opinion = 5
+	monthly_prestige = 0.05
+}
+
+AUV_divided_house_foundation_modifier = {
+	icon = family_positive
+	dynasty_opinion = -5
+	monthly_prestige = 0.1
+}
+
+################################################################################
+# SAINTS AND PATRONS
+################################################################################
+
+AUV_brioude_patron_modifier = {
+	icon = piety_positive
+	clergy_opinion = 10
+	monthly_piety = 0.1
+	dynasty_opinion = 3
+}
+
+AUV_brioude_cartulary_modifier = {
+	icon = learning_positive
+	stewardship = 1
+	monthly_prestige = 0.1
+}
+
+AUV_chaise_dieu_patron_modifier = {
+	icon = piety_positive
+	clergy_opinion = 5
+	learning = 1
+	monthly_piety = 0.1
+}
+
+AUV_chaise_dieu_expansion_modifier = {
+	icon = diplomacy_positive
+	clergy_opinion = 5
+	diplomacy = 1
+	monthly_prestige = 0.1
+}
+
+################################################################################
+# LORDS OF THE HIGH COUNTRY
+################################################################################
+
 AUV_upper_allier_routes_modifier = {
 	icon = travel_safety_positive
 	development_growth = 0.05
 	monthly_county_control_growth_add = 0.1
+}
+
+AUV_upper_allier_tolls_modifier = {
+	icon = economy_positive
+	tax_mult = 0.05
+	county_opinion_add = -5
+}
+
+AUV_upper_allier_compact_modifier = {
+	icon = piety_positive
+	development_growth = 0.05
+	county_opinion_add = 5
 }
