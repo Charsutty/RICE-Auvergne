@@ -4,7 +4,7 @@ A historical flavor submod for **Crusader Kings III** and **RICE (Regional Immer
 
 ## Status
 
-Early development. A first Tier 1 vertical slice now connects Clermont's competing authorities, the technical foundation of the divided comital house, and the Upper Allier highland corridor.
+Early development. A first Tier 1 vertical slice now connects Clermont's competing authorities, the technical foundation of the divided comital house, and the Upper Allier highland corridor. The **Counts and Crosiers** module is beginning to develop from a single settlement decision into a narrative political chain.
 
 ## Core design rule
 
@@ -63,11 +63,17 @@ See [`docs/design/RICE_INTEGRATION.md`](docs/design/RICE_INTEGRATION.md) for the
 The first connected implementation includes:
 
 - **Negotiate Authority at Clermont**, a recurring choice between ecclesiastical privileges, comital jurisdiction, and a negotiated compact;
+- a developing **Counts and Crosiers** chain in which that settlement is later tested and, in the late tenth and eleventh centuries, can intersect with Peace of God flavor;
 - **Address the Comital Succession**, a post-1100 dynasty-state foundation for the future Divided House chain without prematurely creating a Dauphin title or branch;
 - **Patronize an Auvergnat Institution**, a renewable relationship with Saint-Julien of Brioude or, after 1043, La Chaise-Dieu;
 - an expanded **Secure the Roads of the Upper Allier**, with investment, toll, and mediated-rights outcomes.
 
-All three use existing vanilla title scopes, additive AUV-owned script, current RICE decision/event conventions, the RICE availability helper, the historical-context game rule, and complete English/French localization. See [`docs/design/TIER1_VERTICAL_SLICE.md`](docs/design/TIER1_VERTICAL_SLICE.md) for evidence boundaries and research TODOs.
+The implementation uses existing vanilla title scopes, additive AUV-owned script, current RICE decision/event conventions, the RICE availability helper, the historical-context game rule, and complete English/French localization.
+
+See:
+
+- [`docs/design/TIER1_VERTICAL_SLICE.md`](docs/design/TIER1_VERTICAL_SLICE.md) for the overall slice and validation checklist;
+- [`docs/design/COUNTS_AND_CROSIERS.md`](docs/design/COUNTS_AND_CROSIERS.md) for the Clermont module's specific design rules and next research gates.
 
 ## Documentation
 
