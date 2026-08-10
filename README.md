@@ -4,7 +4,15 @@ A historical flavor submod for **Crusader Kings III** and **RICE (Regional Immer
 
 ## Status
 
-Early research and project scaffolding.
+Early development. The first compatibility-oriented gameplay slice is now implemented around the Upper Allier.
+
+## Core design rule
+
+**This is not a map mod.**
+
+RICE: Auvergne is designed to sit cleanly on top of the normal vanilla CK3 map and RICE. It does not attempt to redraw medieval Auvergne, create a county of Saugues, or reconstruct the sirerie of Mercœur as new landed titles.
+
+Instead, historical places and networks are expressed through existing vanilla titles, characters, events, decisions, modifiers, travel, religious patronage, dynastic relationships, and other additive systems.
 
 The design principle is to represent historical importance proportionally. Saugues and the Margeride are present because they belonged to a documented frontier and seigneurial network dominated in part by the lords of Mercœur, not because the project aims to make them artificially central. Clermont and the major Auvergnat political and ecclesiastical centers remain structurally central.
 
@@ -17,24 +25,51 @@ The design principle is to represent historical importance proportionally. Saugu
 - Major religious networks: Clermont, Brioude, Aurillac, La Chaise-Dieu, and Le Puy.
 - Occitan court culture without reducing Auvergne to generic southern-French flavor.
 
-## Dependency
+## Dependency and layering
 
-This project is designed as a **RICE submod**. RICE remains an external dependency; its files and assets should not be copied unless technically necessary and explicitly permitted.
+The intended load stack is:
 
-## Namespaces
+```text
+Crusader Kings III vanilla
+        +
+RICE
+        +
+RICE: Auvergne
+```
 
-All project-owned script keys should use `AUV_` and event IDs should use the `auvergne` namespace.
+RICE remains an external dependency. Its files should not be copied into this repository merely for convenience.
+
+The submod follows RICE's additive scripting conventions and may directly use stable RICE helpers where appropriate. Project-owned keys use the `AUV_` prefix and events use the `auvergne` namespace.
+
+See [`docs/design/RICE_INTEGRATION.md`](docs/design/RICE_INTEGRATION.md) for the compatibility contract.
+
+## First gameplay slice
+
+The first implemented pattern is **Secure the Roads of the Upper Allier**.
+
+It deliberately demonstrates the intended architecture:
+
+- it targets existing vanilla `c_velay` and `c_gevaudan` scopes;
+- it adds no titles or provinces;
+- it uses a decision structure matching current RICE conventions;
+- it reuses RICE's availability helper trigger;
+- it adds only an AUV-owned modifier and event;
+- it respects RICE's historical-context game rule;
+- it has English and French localization.
+
+This is a technical and design reference implementation, not the final depth planned for Mercœur/Saugues content.
 
 ## Documentation
 
-Historical research lives under [`docs/research/`](docs/research/). Design decisions should distinguish documented facts, plausible reconstruction, and gameplay fiction.
+Historical research lives under [`docs/research/`](docs/research/). Design decisions distinguish documented facts, plausible reconstruction, and gameplay fiction.
 
-## Current scope
+Current historical priorities are:
 
-The first implementation target is a vertical slice around:
+1. the comital house and emergence of the Dauphins of Auvergne;
+2. Mercœur as both a highland lordship and an ecclesiastical/dynastic network;
+3. Clermont, Brioude, Aurillac, and La Chaise-Dieu as major political or religious anchors;
+4. the Upper Allier, Saugues, Velay, and northern Gévaudan as connected secondary flavor rather than an artificial new principality.
 
-1. Clermont and comital/episcopal authority;
-2. Mercœur, Saugues, and frontier lordship;
-3. Aurillac / Brioude / La Chaise-Dieu as religious and aristocratic networks.
+## Art
 
-DDS and other art assets will be handled in a later dedicated pipeline.
+DDS and other project-owned art assets will be handled in a later dedicated pipeline. Until then, early gameplay should prefer existing vanilla/RICE-compatible illustrations whose paths are already verified in RICE.
