@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased — Content framework
+
+- Added `docs/design/CONTENT_OBJECTIVES.md` as the canonical flavor-pack content strategy.
+- Defined six project objectives: fragmented authority, comital/Dauphin dynastic history, political religious institutions, highland lordship, emergent Auvergnat identity, and external regional connections.
+- Organized planned content into five modules: **Counts and Crosiers**, **The Divided House**, **Saints and Patrons**, **Lords of the High Country**, and **Courts of Auvergne**.
+- Added Tier 1 / Tier 2 / Tier 3 content priorities.
+- Formalized the rule that Saugues receives limited but precise historically grounded flavor rather than disproportionate political weight.
+- Added scope-discipline and success criteria for future features.
+- Added a recommended development order to keep the project useful as a general Auvergne flavor pack before expanding highly local content.
+
 ## 0.0.2 — RICE integration baseline
 
 - Formalized the submod as a strict vanilla-map, additive RICE extension.
