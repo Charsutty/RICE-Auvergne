@@ -1,18 +1,54 @@
+﻿###############################################################################
+#
+# auvergne
+#
+# auvergne.0000-auvergne.0999		Setup / generic
+# auvergne.1000-auvergne.1999		Clermont and political authority
+# auvergne.2000-auvergne.2999		Mercœur / Saugues / highland frontier
+# auvergne.3000-auvergne.3999		Religious networks
+# auvergne.4000-auvergne.4999		Dauphins and dynastic content
+# auvergne.5000-auvergne.5999		Court culture / troubadours
+#
+###############################################################################
+
 namespace = auvergne
 
-################################################################################
-# RICE: Auvergne — Core Events
+######################################################################################
 #
-# Event ranges (working convention):
-# 0001–0999  setup / generic
-# 1000–1999  Clermont and political authority
-# 2000–2999  Mercœur / Saugues / highland frontier
-# 3000–3999  religious networks
-# 4000–4999  Dauphins and dynastic content
-# 5000–5999  court culture / troubadours
+# MERCŒUR / SAUGUES / HIGHLAND FRONTIER
 #
-# Keep historical claims documented under docs/research before implementation.
-################################################################################
+# auvergne.2000-auvergne.2999
+#
+######################################################################################
 
-# Intentionally empty in the initial scaffold.
-# First vertical-slice events will be added after CK3 title mapping is verified.
+# Secure the Roads of the Upper Allier
+auvergne.2000 = {
+	type = character_event
+	title = auvergne.2000.t
+	desc = auvergne.2000.desc
+	theme = stewardship_domain_focus
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = { # The roads must remain open.
+		name = auvergne.2000.a
+		add_prestige = 75
+		ai_chance = {
+			base = 100
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				has_game_rule = RICE_historical_context_on
+			}
+			custom_description_no_bullet = {
+				text = auvergne.2000.info
+			}
+		}
+	}
+}
