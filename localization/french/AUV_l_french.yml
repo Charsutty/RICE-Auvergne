@@ -1,5 +1,17 @@
 ﻿l_french:
- # RICE: Auvergne — localisation française
- # Ajouter les clés au fil de l'implémentation.
  AUV_MOD_NAME:0 "RICE : Auvergne"
  AUV_MOD_DESC:0 "Du contenu régional pour l'Auvergne médiévale et les hautes terres qui lui sont liées."
+
+ # Décisions
+ AUV_secure_upper_allier_routes_decision:0 "Sécuriser les routes du Haut-Allier"
+ AUV_secure_upper_allier_routes_decision_desc:0 "Les hautes terres entre le Velay et le Gévaudan reposent sur des routes difficiles, des passages de rivière, des forteresses et des droits locaux. Investir dans ces voies permet d'y renforcer l'autorité sans prétendre en faire une unité politique distincte."
+
+ # Modificateurs
+ AUV_upper_allier_routes_modifier:0 "Routes du Haut-Allier sécurisées"
+ AUV_upper_allier_routes_modifier_desc:0 "Routes, passages et fortifications locales ont reçu une attention soutenue, facilitant l'administration de ces hautes terres difficiles."
+
+ # Événements
+ auvergne.2000.t:0 "Les routes des hautes terres"
+ auvergne.2000.desc:0 "Les voies qui longent le Haut-Allier ne sont pas de simples chemins entre des habitats isolés. Elles relient vallées, passages, places fortifiées et seigneuries dont la coopération est indispensable pour que l'autorité atteigne les hautes terres. Grâce aux dépenses consacrées aux escortes, aux réparations et aux accords avec les hommes du pays, le passage est devenu plus sûr."
+ auvergne.2000.a:0 "Les routes doivent rester ouvertes."
+ auvergne.2000.info:0 "Contexte historique : les environs de Saugues appartenaient à un espace frontalier lié à la seigneurie de Mercœur. Les sources documentaires et archéologiques témoignent de nombreux sites fortifiés et de voies contrôlant les accès entre Velay, Gévaudan, Margeride et hautes terres auvergnates voisines."
