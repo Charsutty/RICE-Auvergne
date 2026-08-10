@@ -1,0 +1,9 @@
+################################################################################
+# RICE: Auvergne — Scripted Effects
+#
+# Naming convention: AUV_<purpose>_effect
+#
+# Prefer additive effects and reusable helpers over duplicated event code.
+################################################################################
+
+# Initial scaffold intentionally contains no active scripted effects.
