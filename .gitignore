@@ -1,0 +1,16 @@
+# Local CK3 / launcher files
+*.bak
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Art working files (keep exported game assets elsewhere until pipeline is defined)
+art_working/
+
+# Local test output
+/test_output/
