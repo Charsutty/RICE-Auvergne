@@ -1,12 +1,77 @@
-################################################################################
-# RICE: Auvergne — Decisions
+﻿################################################################################
 #
-# Planned candidates (not yet implemented):
-# - Patronize Saint-Géraud of Aurillac
-# - Support La Chaise-Dieu
-# - Honor Saint Julian at Brioude
-# - Found / develop Montferrand (chronology dependent)
-# - Confirm local highland customs
+# RICE: Auvergne — DECISIONS
+#
 ################################################################################
 
-# Initial scaffold intentionally contains no active decisions.
+# Secure the Roads of the Upper Allier
+# A deliberately light regional decision: it does not create or alter titles,
+# provinces, holdings, de jure structure, or cultures.
+AUV_secure_upper_allier_routes_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_contract_assistance.dds" }
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 48
+		kingdom = 72
+		empire = 96
+		hegemony = 96
+	}
+
+	desc = AUV_secure_upper_allier_routes_decision_desc
+
+	is_shown = {
+		is_playable_character = yes
+		is_landed = yes
+		AUV_controls_upper_allier_scope_trigger = yes
+	}
+
+	is_valid = {
+		AUV_can_secure_upper_allier_routes_trigger = yes
+	}
+
+	is_valid_showing_failures_only = {
+		RICE_is_available_adult_even_if_sick_trigger = yes
+	}
+
+	effect = {
+		show_as_tooltip = {
+			AUV_secure_upper_allier_routes_effect = yes
+		}
+		AUV_secure_upper_allier_routes_effect = yes
+		trigger_event = {
+			id = auvergne.2000
+		}
+	}
+
+	cost = {
+		gold = { value = minor_gold_value }
+	}
+
+	ai_potential = {
+		short_term_gold > minor_gold_value
+	}
+
+	ai_will_do = {
+		base = 20
+
+		modifier = {
+			add = 20
+			has_trait = diligent
+		}
+		modifier = {
+			add = 20
+			has_trait = just
+		}
+		modifier = {
+			add = -20
+			has_trait = lazy
+		}
+		modifier = {
+			add = -20
+			has_trait = arbitrary
+		}
+	}
+}
