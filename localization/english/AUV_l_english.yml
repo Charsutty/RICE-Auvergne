@@ -1,0 +1,5 @@
+﻿l_english:
+ # RICE: Auvergne — English localization
+ # Add keys here as features are implemented.
+ AUV_MOD_NAME:0 "RICE: Auvergne"
+ AUV_MOD_DESC:0 "Regional flavor for medieval Auvergne and its connected highland worlds."
