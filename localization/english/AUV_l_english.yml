@@ -1,5 +1,17 @@
 ﻿l_english:
- # RICE: Auvergne — English localization
- # Add keys here as features are implemented.
  AUV_MOD_NAME:0 "RICE: Auvergne"
  AUV_MOD_DESC:0 "Regional flavor for medieval Auvergne and its connected highland worlds."
+
+ # Decisions
+ AUV_secure_upper_allier_routes_decision:0 "Secure the Roads of the Upper Allier"
+ AUV_secure_upper_allier_routes_decision_desc:0 "The high country between the Velay and Gévaudan is held together by difficult roads, river crossings, castles, and local rights. Investing in these routes will strengthen authority without pretending that the region forms a separate political unit."
+
+ # Modifiers
+ AUV_upper_allier_routes_modifier:0 "Secured Upper Allier Routes"
+ AUV_upper_allier_routes_modifier_desc:0 "Roads, crossings, and local fortifications have received sustained attention, making this difficult highland country easier to administer."
+
+ # Events
+ auvergne.2000.t:0 "Roads Through the High Country"
+ auvergne.2000.desc:0 "The routes along the upper Allier are more than tracks between isolated settlements. They bind together valleys, crossings, fortified places, and lordships whose cooperation is essential if authority is to reach the high country. With money spent on escorts, repairs, and agreements with local men, passage has become more reliable."
+ auvergne.2000.a:0 "The roads must remain open."
+ auvergne.2000.info:0 "Historical context: the area around Saugues lay within a frontier network connected to the lordship of Mercœur. Archaeological and documentary evidence points to numerous fortified sites and routes controlling access between the Velay, Gévaudan, Margeride, and neighboring Auvergnat highlands."
