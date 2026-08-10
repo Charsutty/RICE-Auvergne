@@ -1,0 +1,12 @@
+################################################################################
+# RICE: Auvergne — Decisions
+#
+# Planned candidates (not yet implemented):
+# - Patronize Saint-Géraud of Aurillac
+# - Support La Chaise-Dieu
+# - Honor Saint Julian at Brioude
+# - Found / develop Montferrand (chronology dependent)
+# - Confirm local highland customs
+################################################################################
+
+# Initial scaffold intentionally contains no active decisions.
