@@ -25,6 +25,21 @@ The design principle is to represent historical importance proportionally. Saugu
 - Major religious networks: Clermont, Brioude, Aurillac, La Chaise-Dieu, and Le Puy.
 - Occitan court culture without reducing Auvergne to generic southern-French flavor.
 
+## Content objectives
+
+The pack is organized around six design objectives:
+
+1. represent fragmented political authority;
+2. give the comital house and Dauphins a dynamic dynastic history;
+3. make major religious institutions political actors;
+4. represent the highlands as a social and political system;
+5. let Auvergnat identity emerge from gameplay rather than define the mod upfront;
+6. keep Auvergne connected to the wider French, Aquitanian, Occitan, monastic, and pilgrimage worlds.
+
+These objectives are implemented through five planned modules: **Counts and Crosiers**, **The Divided House**, **Saints and Patrons**, **Lords of the High Country**, and **Courts of Auvergne**.
+
+See [`docs/design/CONTENT_OBJECTIVES.md`](docs/design/CONTENT_OBJECTIVES.md) for the full content hierarchy, priority tiers, scope rules, and recommended development order.
+
 ## Dependency and layering
 
 The intended load stack is:
