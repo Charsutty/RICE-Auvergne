@@ -2,6 +2,13 @@
 
 ## Unreleased — Content framework
 
+- Deepened **Counts and Crosiers** so the Clermont settlement now develops into a narrative consequence rather than ending as a modifier-only choice.
+- Added `auvergne.1002`, **An Oath Against Private War**, representing the late tenth- and eleventh-century Peace of God environment in Auvergne without claiming to recreate a specific Clermont council.
+- Limited the new Peace of God flavor to 975–1099 and documented the chronology/evidence boundary.
+- Added complete English and French localization for the expanded Clermont chain.
+- Added `docs/design/COUNTS_AND_CROSIERS.md` as the module-specific design contract.
+- Added `docs/research/04_clermont_peace_of_god.md` with the historical basis and explicit reconstruction limits.
+
 - Added the first connected Tier 1 vertical slice across **Counts and Crosiers**, **The Divided House**, and **Lords of the High Country**.
 - Added **Negotiate Authority at Clermont**, with three ten-year political settlements and a delayed consequence event.
 - Added **Address the Comital Succession**, gated to 1100 or later, using persistent dynasty modifiers as foundations for future unity and divided-house paths.
