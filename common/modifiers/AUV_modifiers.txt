@@ -1,0 +1,11 @@
+﻿#################################################
+#
+# RICE: Auvergne — MODIFIERS
+#
+#################################################
+
+AUV_upper_allier_routes_modifier = {
+	icon = travel_safety_positive
+	development_growth = 0.05
+	monthly_county_control_growth_add = 0.1
+}
