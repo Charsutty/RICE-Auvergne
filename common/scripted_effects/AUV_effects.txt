@@ -1,9 +1,39 @@
-################################################################################
-# RICE: Auvergne — Scripted Effects
+﻿################################################################################
 #
-# Naming convention: AUV_<purpose>_effect
+# RICE: Auvergne — SCRIPTED EFFECTS
 #
 # Prefer additive effects and reusable helpers over duplicated event code.
+#
 ################################################################################
 
-# Initial scaffold intentionally contains no active scripted effects.
+AUV_secure_upper_allier_routes_effect = {
+	if = {
+		limit = {
+			has_title = title:c_velay
+			title:c_velay = {
+				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+			}
+		}
+		title:c_velay = {
+			add_county_modifier = {
+				modifier = AUV_upper_allier_routes_modifier
+				duration = { years = 10 }
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			has_title = title:c_gevaudan
+			title:c_gevaudan = {
+				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+			}
+		}
+		title:c_gevaudan = {
+			add_county_modifier = {
+				modifier = AUV_upper_allier_routes_modifier
+				duration = { years = 10 }
+			}
+		}
+	}
+}
