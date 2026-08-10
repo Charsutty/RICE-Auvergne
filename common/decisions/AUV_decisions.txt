@@ -8,7 +8,7 @@
 # A deliberately light regional decision: it does not create or alter titles,
 # provinces, holdings, de jure structure, or cultures.
 AUV_secure_upper_allier_routes_decision = {
-	picture = { reference = "gfx/interface/illustrations/decisions/decision_contract_assistance.dds" }
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_european_market.dds" }
 	decision_group_type = major
 
 	ai_check_interval_by_tier = {
