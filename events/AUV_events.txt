@@ -138,6 +138,112 @@ auvergne.1001 = {
 	option = {
 		name = auvergne.1001.a
 		add_prestige = 50
+		if = {
+			limit = {
+				current_date >= 975.1.1
+				current_date < 1100.1.1
+			}
+			trigger_event = {
+				id = auvergne.1002
+				days = { 180 720 }
+			}
+		}
+	}
+}
+
+# Peace of God flavor: a representative regional peace oath, not a recreation
+# of one specific council. The chronology is deliberately limited to the late
+# tenth and eleventh centuries.
+auvergne.1002 = {
+	type = character_event
+	title = auvergne.1002.t
+	desc = auvergne.1002.desc
+	theme = faith
+
+	trigger = {
+		current_date >= 975.1.1
+		current_date < 1100.1.1
+		OR = {
+			has_character_modifier = AUV_clermont_ecclesiastical_compact_modifier
+			has_character_modifier = AUV_clermont_comital_ascendancy_modifier
+			has_character_modifier = AUV_clermont_balanced_authority_modifier
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	right_portrait = {
+		character = scope:chaplain
+		trigger = { exists = scope:chaplain }
+		animation = personality_honorable
+	}
+
+	immediate = {
+		cp:councillor_court_chaplain ?= { save_scope_as = chaplain }
+	}
+
+	option = { # Support the ecclesiastical peace oath.
+		name = auvergne.1002.a
+		add_piety = minor_piety_gain
+		add_prestige = 50
+		ai_chance = {
+			base = 45
+			modifier = {
+				add = 25
+				has_trait = zealous
+			}
+			modifier = {
+				add = 15
+				has_trait = compassionate
+			}
+		}
+	}
+
+	option = { # Insist that public peace flows from comital justice.
+		name = auvergne.1002.b
+		add_prestige = minor_prestige_gain
+		add_piety = -50
+		ai_chance = {
+			base = 35
+			modifier = {
+				add = 25
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 15
+				has_trait = arrogant
+			}
+		}
+	}
+
+	option = { # Seal a joint peace under negotiated authority.
+		name = auvergne.1002.c
+		trigger = {
+			has_character_modifier = AUV_clermont_balanced_authority_modifier
+		}
+		add_piety = 75
+		add_prestige = 75
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = diligent
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { has_game_rule = RICE_historical_context_on }
+			custom_description_no_bullet = { text = auvergne.1002.info }
+		}
 	}
 }
 
