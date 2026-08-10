@@ -7,9 +7,6 @@
 #
 ################################################################################
 
-# Broad gameplay scope for Auvergne flavor.
-# The duchy is the main anchor; neighboring counties are included only where
-# their historical networks overlap with Auvergne content.
 AUV_is_in_flavor_scope_trigger = {
 	OR = {
 		has_title = title:d_auvergne
@@ -21,9 +18,30 @@ AUV_is_in_flavor_scope_trigger = {
 	}
 }
 
-# Narrow scope for the Upper Allier / Mercœur-facing flavor cluster.
-# This deliberately uses existing vanilla counties rather than introducing a
-# Saugues or Mercœur map title.
+AUV_controls_clermont_scope_trigger = {
+	OR = {
+		has_title = title:c_auvergne
+		has_title = title:c_clermont_sur_allier
+	}
+}
+
+AUV_controls_comital_auvergne_scope_trigger = {
+	OR = {
+		has_title = title:d_auvergne
+		has_title = title:c_auvergne
+		has_title = title:c_clermont_sur_allier
+	}
+}
+
+AUV_controls_auvergnat_patronage_scope_trigger = {
+	OR = {
+		has_title = title:d_auvergne
+		has_title = title:c_auvergne
+		has_title = title:c_clermont_sur_allier
+		has_title = title:c_thiers
+	}
+}
+
 AUV_controls_upper_allier_scope_trigger = {
 	OR = {
 		has_title = title:c_velay
@@ -31,20 +49,48 @@ AUV_controls_upper_allier_scope_trigger = {
 	}
 }
 
-# Used by the first repeatable regional decision.
+AUV_can_negotiate_clermont_authority_trigger = {
+	AUV_controls_clermont_scope_trigger = yes
+	NOT = { has_character_flag = AUV_clermont_authority_recently_settled }
+}
+
+AUV_can_address_comital_succession_trigger = {
+	AUV_controls_comital_auvergne_scope_trigger = yes
+	current_date >= 1100.1.1
+	exists = dynasty
+	dynasty = {
+		NOR = {
+			has_dynasty_modifier = AUV_comital_house_compact_modifier
+			has_dynasty_modifier = AUV_divided_house_foundation_modifier
+		}
+	}
+	any_close_family_member = {
+		is_alive = yes
+		is_adult = yes
+	}
+}
+
 AUV_can_secure_upper_allier_routes_trigger = {
 	AUV_controls_upper_allier_scope_trigger = yes
 	OR = {
 		AND = {
 			has_title = title:c_velay
 			title:c_velay = {
-				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+				NOR = {
+					has_county_modifier = AUV_upper_allier_routes_modifier
+					has_county_modifier = AUV_upper_allier_tolls_modifier
+					has_county_modifier = AUV_upper_allier_compact_modifier
+				}
 			}
 		}
 		AND = {
 			has_title = title:c_gevaudan
 			title:c_gevaudan = {
-				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
+				NOR = {
+					has_county_modifier = AUV_upper_allier_routes_modifier
+					has_county_modifier = AUV_upper_allier_tolls_modifier
+					has_county_modifier = AUV_upper_allier_compact_modifier
+				}
 			}
 		}
 	}

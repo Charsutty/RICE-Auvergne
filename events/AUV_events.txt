@@ -14,11 +14,136 @@
 namespace = auvergne
 
 ######################################################################################
-#
+# COUNTS AND CROSIERS
+# auvergne.1000-auvergne.1999
+######################################################################################
+
+# A negotiated settlement between comital and ecclesiastical authority.
+auvergne.1000 = {
+	type = character_event
+	title = auvergne.1000.t
+	desc = auvergne.1000.desc
+	theme = diplomacy_majesty_focus
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	right_portrait = {
+		character = scope:chaplain
+		trigger = { exists = scope:chaplain }
+		animation = disapproval
+	}
+
+	immediate = {
+		cp:councillor_court_chaplain ?= { save_scope_as = chaplain }
+	}
+
+	option = { # Confirm ecclesiastical privileges.
+		name = auvergne.1000.a
+		AUV_clermont_confirm_privileges_effect = yes
+		ai_chance = {
+			base = 35
+			modifier = {
+				add = 25
+				has_trait = zealous
+			}
+			modifier = {
+				add = 15
+				has_trait = humble
+			}
+		}
+	}
+
+	option = { # Assert comital jurisdiction.
+		name = auvergne.1000.b
+		AUV_clermont_assert_jurisdiction_effect = yes
+		ai_chance = {
+			base = 30
+			modifier = {
+				add = 25
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 15
+				has_trait = arbitrary
+			}
+		}
+	}
+
+	option = { # Broker a written compromise.
+		name = auvergne.1000.c
+		AUV_clermont_broker_compromise_effect = yes
+		ai_chance = {
+			base = 35
+			modifier = {
+				add = 25
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = diligent
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { has_game_rule = RICE_historical_context_on }
+			custom_description_no_bullet = { text = auvergne.1000.info }
+		}
+		trigger_event = {
+			id = auvergne.1001
+			days = { 1825 2920 }
+		}
+	}
+}
+
+# Consequence beat: the settlement is tested after several years.
+auvergne.1001 = {
+	type = character_event
+	title = auvergne.1001.t
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { has_character_modifier = AUV_clermont_ecclesiastical_compact_modifier }
+				desc = auvergne.1001.desc.privileges
+			}
+			triggered_desc = {
+				trigger = { has_character_modifier = AUV_clermont_comital_ascendancy_modifier }
+				desc = auvergne.1001.desc.jurisdiction
+			}
+			triggered_desc = {
+				trigger = { has_character_modifier = AUV_clermont_balanced_authority_modifier }
+				desc = auvergne.1001.desc.compromise
+			}
+		}
+	}
+	theme = realm
+
+	trigger = {
+		OR = {
+			has_character_modifier = AUV_clermont_ecclesiastical_compact_modifier
+			has_character_modifier = AUV_clermont_comital_ascendancy_modifier
+			has_character_modifier = AUV_clermont_balanced_authority_modifier
+		}
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = auvergne.1001.a
+		add_prestige = 50
+	}
+}
+
+######################################################################################
 # MERCŒUR / SAUGUES / HIGHLAND FRONTIER
-#
 # auvergne.2000-auvergne.2999
-#
 ######################################################################################
 
 # Secure the Roads of the Upper Allier
@@ -33,22 +158,332 @@ auvergne.2000 = {
 		animation = thinking
 	}
 
-	option = { # The roads must remain open.
+	right_portrait = {
+		character = scope:chaplain
+		trigger = { exists = scope:chaplain }
+		animation = personality_honorable
+	}
+
+	immediate = {
+		cp:councillor_court_chaplain ?= { save_scope_as = chaplain }
+	}
+
+	option = { # Escorts, repairs, and reliable passage.
 		name = auvergne.2000.a
+		AUV_secure_upper_allier_routes_effect = yes
 		add_prestige = 75
 		ai_chance = {
-			base = 100
+			base = 50
+			modifier = {
+				add = 20
+				has_trait = diligent
+			}
+		}
+	}
+
+	option = { # Enforce tolls and comital dues.
+		name = auvergne.2000.b
+		AUV_extract_upper_allier_tolls_effect = yes
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 25
+				has_trait = greedy
+			}
+			modifier = {
+				add = 15
+				has_trait = arbitrary
+			}
+		}
+	}
+
+	option = { # Ask the clergy to mediate local rights.
+		name = auvergne.2000.c
+		trigger = {
+			exists = scope:chaplain
+			scope:chaplain = { is_available_adult = yes }
+		}
+		AUV_mediate_upper_allier_rights_effect = yes
+		ai_chance = {
+			base = 25
+			modifier = {
+				add = 25
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = zealous
+			}
 		}
 	}
 
 	after = {
 		if = {
-			limit = {
-				has_game_rule = RICE_historical_context_on
+			limit = { has_game_rule = RICE_historical_context_on }
+			custom_description_no_bullet = { text = auvergne.2000.info }
+		}
+	}
+}
+
+######################################################################################
+# SAINTS AND PATRONS
+# auvergne.3000-auvergne.3999
+######################################################################################
+
+# Choose an institution for a ten-year patronage relationship.
+auvergne.3000 = {
+	type = character_event
+	title = auvergne.3000.t
+	desc = auvergne.3000.desc
+	theme = learning_theology_focus
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	right_portrait = {
+		character = scope:chaplain
+		trigger = { exists = scope:chaplain }
+		animation = personality_rational
+	}
+
+	immediate = {
+		cp:councillor_court_chaplain ?= { save_scope_as = chaplain }
+	}
+
+	option = { # Saint-Julien of Brioude.
+		name = auvergne.3000.a
+		AUV_patronize_brioude_effect = yes
+		trigger_event = {
+			id = auvergne.3001
+			days = { 730 1825 }
+		}
+		ai_chance = {
+			base = 60
+			modifier = {
+				add = 20
+				current_date < 1043.1.1
 			}
-			custom_description_no_bullet = {
-				text = auvergne.2000.info
+			modifier = {
+				add = 15
+				has_trait = ambitious
 			}
 		}
+	}
+
+	option = { # La Chaise-Dieu, only after its documented foundation.
+		name = auvergne.3000.b
+		trigger = { current_date >= 1043.1.1 }
+		AUV_patronize_chaise_dieu_effect = yes
+		trigger_event = {
+			id = auvergne.3002
+			days = { 730 1825 }
+		}
+		ai_chance = {
+			base = 40
+			modifier = {
+				add = 20
+				current_date >= 1066.1.1
+			}
+			modifier = {
+				add = 15
+				has_trait = zealous
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { has_game_rule = RICE_historical_context_on }
+			custom_description_no_bullet = { text = auvergne.3000.info }
+		}
+	}
+}
+
+# Brioude follow-up: commemoration or the chapter's documentary memory.
+auvergne.3001 = {
+	type = character_event
+	title = auvergne.3001.t
+	desc = auvergne.3001.desc
+	theme = faith
+
+	trigger = {
+		has_character_modifier = AUV_brioude_patron_modifier
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = { # Prayers and dynastic memory.
+		name = auvergne.3001.a
+		add_piety = 75
+		dynasty ?= { add_dynasty_prestige = 100 }
+		ai_chance = {
+			base = 55
+			modifier = {
+				add = 20
+				has_trait = zealous
+			}
+		}
+	}
+
+	option = { # Learn from the chapter's charters.
+		name = auvergne.3001.b
+		add_character_modifier = {
+			modifier = AUV_brioude_cartulary_modifier
+			years = 5
+		}
+		add_prestige = 75
+		ai_chance = {
+			base = 45
+			modifier = {
+				add = 20
+				has_trait = diligent
+			}
+			modifier = {
+				add = 15
+				has_trait = scholar
+			}
+		}
+	}
+}
+
+# La Chaise-Dieu follow-up: support outward expansion or local prayer.
+auvergne.3002 = {
+	type = character_event
+	title = auvergne.3002.t
+	desc = auvergne.3002.desc
+	theme = faith
+
+	trigger = {
+		has_character_modifier = AUV_chaise_dieu_patron_modifier
+		current_date >= 1043.1.1
+	}
+
+	left_portrait = {
+		character = root
+		animation = personality_honorable
+	}
+
+	option = { # Help the new community reach outward.
+		name = auvergne.3002.a
+		add_character_modifier = {
+			modifier = AUV_chaise_dieu_expansion_modifier
+			years = 5
+		}
+		add_prestige = 75
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 20
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 15
+				has_trait = generous
+			}
+		}
+	}
+
+	option = { # Keep the gift focused on prayer and commemoration.
+		name = auvergne.3002.b
+		add_piety = medium_piety_gain
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 20
+				has_trait = humble
+			}
+			modifier = {
+				add = 15
+				has_trait = content
+			}
+		}
+	}
+}
+
+######################################################################################
+# THE DIVIDED HOUSE
+# auvergne.4000-auvergne.4999
+######################################################################################
+
+# The implementation deliberately stops before creating or naming a Dauphin title.
+auvergne.4000 = {
+	type = character_event
+	title = auvergne.4000.t
+	desc = auvergne.4000.desc
+	theme = diplomacy_family_focus
+
+	left_portrait = {
+		character = root
+		animation = personality_rational
+	}
+
+	option = { # Bind the house to a single settlement.
+		name = auvergne.4000.a
+		AUV_establish_comital_house_compact_effect = yes
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				has_trait = just
+			}
+			modifier = {
+				add = 15
+				has_trait = content
+			}
+		}
+	}
+
+	option = { # Record competing claims without forcing a title split.
+		name = auvergne.4000.b
+		AUV_establish_divided_house_foundation_effect = yes
+		trigger_event = {
+			id = auvergne.4001
+			days = { 30 90 }
+		}
+		ai_chance = {
+			base = 50
+			modifier = {
+				add = 25
+				has_trait = ambitious
+			}
+			modifier = {
+				add = 15
+				has_trait = arrogant
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = { has_game_rule = RICE_historical_context_on }
+			custom_description_no_bullet = { text = auvergne.4000.info }
+		}
+	}
+}
+
+auvergne.4001 = {
+	type = character_event
+	title = auvergne.4001.t
+	desc = auvergne.4001.desc
+	theme = diplomacy_family_focus
+
+	trigger = {
+		exists = dynasty
+		dynasty = { has_dynasty_modifier = AUV_divided_house_foundation_modifier }
+	}
+
+	left_portrait = {
+		character = root
+		animation = thinking
+	}
+
+	option = {
+		name = auvergne.4001.a
+		add_prestige = 50
 	}
 }

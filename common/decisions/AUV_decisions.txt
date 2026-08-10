@@ -4,9 +4,224 @@
 #
 ################################################################################
 
-# Secure the Roads of the Upper Allier
-# A deliberately light regional decision: it does not create or alter titles,
-# provinces, holdings, de jure structure, or cultures.
+################################################################################
+# COUNTS AND CROSIERS
+################################################################################
+
+AUV_negotiate_clermont_authority_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_RICE_cathedral.dds" }
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 48
+		duchy = 48
+		kingdom = 72
+		empire = 96
+		hegemony = 96
+	}
+
+	desc = AUV_negotiate_clermont_authority_decision_desc
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		AUV_controls_clermont_scope_trigger = yes
+		religion = religion:christianity_religion
+	}
+
+	is_valid = {
+		AUV_can_negotiate_clermont_authority_trigger = yes
+		custom_description = {
+			text = AUV_has_available_court_chaplain_req
+			exists = cp:councillor_court_chaplain
+			cp:councillor_court_chaplain = {
+				is_available_adult = yes
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		RICE_is_available_adult_even_if_sick_trigger = yes
+	}
+
+	effect = {
+		add_character_flag = {
+			flag = AUV_clermont_authority_recently_settled
+			years = 10
+		}
+		custom_tooltip = AUV_negotiate_clermont_authority_effect_tooltip
+		trigger_event = auvergne.1000
+	}
+
+	cost = {
+		gold = { value = minor_gold_value }
+	}
+
+	ai_potential = {
+		short_term_gold > minor_gold_value
+	}
+
+	ai_will_do = {
+		base = 25
+		modifier = {
+			add = 15
+			has_trait = just
+		}
+		modifier = {
+			add = 15
+			has_trait = zealous
+		}
+	}
+}
+
+################################################################################
+# THE DIVIDED HOUSE — TECHNICAL FOUNDATION
+################################################################################
+
+AUV_address_comital_succession_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_RICE_european_book.dds" }
+	decision_group_type = major
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 48
+		kingdom = 72
+		empire = 96
+		hegemony = 96
+	}
+
+	desc = AUV_address_comital_succession_decision_desc
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		AUV_controls_comital_auvergne_scope_trigger = yes
+		current_date >= 1100.1.1
+		exists = dynasty
+		dynasty = {
+			NOR = {
+				has_dynasty_modifier = AUV_comital_house_compact_modifier
+				has_dynasty_modifier = AUV_divided_house_foundation_modifier
+			}
+		}
+	}
+
+	is_valid = {
+		AUV_can_address_comital_succession_trigger = yes
+	}
+
+	is_valid_showing_failures_only = {
+		RICE_is_available_adult_even_if_sick_trigger = yes
+	}
+
+	effect = {
+		custom_tooltip = AUV_address_comital_succession_effect_tooltip
+		trigger_event = auvergne.4000
+	}
+
+	cost = {
+		prestige = { value = minor_prestige_value }
+	}
+
+	ai_potential = {
+		prestige > minor_prestige_value
+	}
+
+	ai_will_do = {
+		base = 20
+		modifier = {
+			add = 20
+			has_trait = ambitious
+		}
+		modifier = {
+			add = 15
+			has_trait = diligent
+		}
+	}
+}
+
+################################################################################
+# SAINTS AND PATRONS
+################################################################################
+
+AUV_patronize_auvergnat_institution_decision = {
+	picture = { reference = "gfx/interface/illustrations/decisions/decision_christian_monastery_monks.dds" }
+	decision_group_type = RICE_religious
+	cooldown = { days = 3650 }
+
+	ai_check_interval_by_tier = {
+		barony = 0
+		county = 72
+		duchy = 60
+		kingdom = 72
+		empire = 96
+		hegemony = 96
+	}
+
+	desc = AUV_patronize_auvergnat_institution_decision_desc
+	selection_tooltip = AUV_patronize_auvergnat_institution_decision_tooltip
+
+	is_shown = {
+		is_ruler = yes
+		is_landed = yes
+		AUV_controls_auvergnat_patronage_scope_trigger = yes
+		religion = religion:christianity_religion
+	}
+
+	is_valid = {
+		AUV_controls_auvergnat_patronage_scope_trigger = yes
+		piety_level >= 1
+		custom_description = {
+			text = AUV_has_available_court_chaplain_req
+			exists = cp:councillor_court_chaplain
+			cp:councillor_court_chaplain = {
+				is_available_adult = yes
+			}
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		RICE_is_available_adult_even_if_sick_trigger = yes
+	}
+
+	effect = {
+		custom_tooltip = AUV_patronize_auvergnat_institution_effect_tooltip
+		trigger_event = auvergne.3000
+	}
+
+	cost = {
+		gold = { value = minor_gold_value }
+	}
+
+	ai_potential = {
+		short_term_gold > minor_gold_value
+	}
+
+	ai_will_do = {
+		base = 25
+		modifier = {
+			add = 20
+			has_trait = zealous
+		}
+		modifier = {
+			add = 15
+			has_trait = generous
+		}
+		modifier = {
+			add = -20
+			has_trait = cynical
+		}
+	}
+}
+
+################################################################################
+# LORDS OF THE HIGH COUNTRY
+################################################################################
+
+# This uses existing vanilla county scopes only. The choice of how to secure the
+# corridor is made in auvergne.2000 rather than being predetermined here.
 AUV_secure_upper_allier_routes_decision = {
 	picture = { reference = "gfx/interface/illustrations/decisions/decision_european_market.dds" }
 	decision_group_type = major
@@ -23,7 +238,7 @@ AUV_secure_upper_allier_routes_decision = {
 	desc = AUV_secure_upper_allier_routes_decision_desc
 
 	is_shown = {
-		is_playable_character = yes
+		is_ruler = yes
 		is_landed = yes
 		AUV_controls_upper_allier_scope_trigger = yes
 	}
@@ -37,13 +252,8 @@ AUV_secure_upper_allier_routes_decision = {
 	}
 
 	effect = {
-		show_as_tooltip = {
-			AUV_secure_upper_allier_routes_effect = yes
-		}
-		AUV_secure_upper_allier_routes_effect = yes
-		trigger_event = {
-			id = auvergne.2000
-		}
+		custom_tooltip = AUV_secure_upper_allier_routes_effect_tooltip
+		trigger_event = auvergne.2000
 	}
 
 	cost = {
@@ -56,7 +266,6 @@ AUV_secure_upper_allier_routes_decision = {
 
 	ai_will_do = {
 		base = 20
-
 		modifier = {
 			add = 20
 			has_trait = diligent
@@ -68,10 +277,6 @@ AUV_secure_upper_allier_routes_decision = {
 		modifier = {
 			add = -20
 			has_trait = lazy
-		}
-		modifier = {
-			add = -20
-			has_trait = arbitrary
 		}
 	}
 }

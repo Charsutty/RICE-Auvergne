@@ -6,34 +6,249 @@
 #
 ################################################################################
 
-AUV_secure_upper_allier_routes_effect = {
+################################################################################
+# COUNTS AND CROSIERS
+################################################################################
+
+AUV_clear_clermont_authority_character_modifiers_effect = {
 	if = {
-		limit = {
-			has_title = title:c_velay
-			title:c_velay = {
-				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
-			}
-		}
-		title:c_velay = {
-			add_county_modifier = {
-				modifier = AUV_upper_allier_routes_modifier
-				duration = { years = 10 }
-			}
-		}
+		limit = { has_character_modifier = AUV_clermont_ecclesiastical_compact_modifier }
+		remove_character_modifier = AUV_clermont_ecclesiastical_compact_modifier
 	}
+	if = {
+		limit = { has_character_modifier = AUV_clermont_comital_ascendancy_modifier }
+		remove_character_modifier = AUV_clermont_comital_ascendancy_modifier
+	}
+	if = {
+		limit = { has_character_modifier = AUV_clermont_balanced_authority_modifier }
+		remove_character_modifier = AUV_clermont_balanced_authority_modifier
+	}
+}
+
+AUV_clear_clermont_authority_county_modifiers_effect = {
+	if = {
+		limit = { has_county_modifier = AUV_clermont_privileges_county_modifier }
+		remove_county_modifier = AUV_clermont_privileges_county_modifier
+	}
+	if = {
+		limit = { has_county_modifier = AUV_clermont_jurisdiction_county_modifier }
+		remove_county_modifier = AUV_clermont_jurisdiction_county_modifier
+	}
+	if = {
+		limit = { has_county_modifier = AUV_clermont_compromise_county_modifier }
+		remove_county_modifier = AUV_clermont_compromise_county_modifier
+	}
+}
+
+AUV_clermont_confirm_privileges_effect = {
+	AUV_clear_clermont_authority_character_modifiers_effect = yes
+	add_character_modifier = {
+		modifier = AUV_clermont_ecclesiastical_compact_modifier
+		years = 10
+	}
+	add_piety = minor_piety_gain
 
 	if = {
-		limit = {
-			has_title = title:c_gevaudan
-			title:c_gevaudan = {
-				NOT = { has_county_modifier = AUV_upper_allier_routes_modifier }
-			}
-		}
-		title:c_gevaudan = {
+		limit = { has_title = title:c_auvergne }
+		title:c_auvergne = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
 			add_county_modifier = {
-				modifier = AUV_upper_allier_routes_modifier
-				duration = { years = 10 }
+				modifier = AUV_clermont_privileges_county_modifier
+				years = 10
 			}
 		}
 	}
+	if = {
+		limit = { has_title = title:c_clermont_sur_allier }
+		title:c_clermont_sur_allier = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
+			add_county_modifier = {
+				modifier = AUV_clermont_privileges_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+AUV_clermont_assert_jurisdiction_effect = {
+	AUV_clear_clermont_authority_character_modifiers_effect = yes
+	add_character_modifier = {
+		modifier = AUV_clermont_comital_ascendancy_modifier
+		years = 10
+	}
+	add_prestige = minor_prestige_gain
+
+	if = {
+		limit = { has_title = title:c_auvergne }
+		title:c_auvergne = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
+			add_county_modifier = {
+				modifier = AUV_clermont_jurisdiction_county_modifier
+				years = 10
+			}
+		}
+	}
+	if = {
+		limit = { has_title = title:c_clermont_sur_allier }
+		title:c_clermont_sur_allier = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
+			add_county_modifier = {
+				modifier = AUV_clermont_jurisdiction_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+AUV_clermont_broker_compromise_effect = {
+	AUV_clear_clermont_authority_character_modifiers_effect = yes
+	add_character_modifier = {
+		modifier = AUV_clermont_balanced_authority_modifier
+		years = 10
+	}
+	add_prestige = 50
+	add_piety = 50
+
+	if = {
+		limit = { has_title = title:c_auvergne }
+		title:c_auvergne = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
+			add_county_modifier = {
+				modifier = AUV_clermont_compromise_county_modifier
+				years = 10
+			}
+		}
+	}
+	if = {
+		limit = { has_title = title:c_clermont_sur_allier }
+		title:c_clermont_sur_allier = {
+			AUV_clear_clermont_authority_county_modifiers_effect = yes
+			add_county_modifier = {
+				modifier = AUV_clermont_compromise_county_modifier
+				years = 10
+			}
+		}
+	}
+}
+
+################################################################################
+# THE DIVIDED HOUSE
+################################################################################
+
+AUV_establish_comital_house_compact_effect = {
+	dynasty ?= {
+		add_dynasty_modifier = {
+			modifier = AUV_comital_house_compact_modifier
+		}
+	}
+	add_prestige = minor_prestige_gain
+}
+
+AUV_establish_divided_house_foundation_effect = {
+	dynasty ?= {
+		add_dynasty_modifier = {
+			modifier = AUV_divided_house_foundation_modifier
+		}
+	}
+	add_prestige = minor_prestige_gain
+}
+
+################################################################################
+# SAINTS AND PATRONS
+################################################################################
+
+AUV_patronize_brioude_effect = {
+	add_character_modifier = {
+		modifier = AUV_brioude_patron_modifier
+		years = 10
+	}
+	add_piety = minor_piety_gain
+	dynasty ?= { add_dynasty_prestige = 75 }
+}
+
+AUV_patronize_chaise_dieu_effect = {
+	add_character_modifier = {
+		modifier = AUV_chaise_dieu_patron_modifier
+		years = 10
+	}
+	add_piety = minor_piety_gain
+	dynasty ?= { add_dynasty_prestige = 75 }
+}
+
+################################################################################
+# LORDS OF THE HIGH COUNTRY
+################################################################################
+
+AUV_clear_upper_allier_modifiers_effect = {
+	if = {
+		limit = { has_county_modifier = AUV_upper_allier_routes_modifier }
+		remove_county_modifier = AUV_upper_allier_routes_modifier
+	}
+	if = {
+		limit = { has_county_modifier = AUV_upper_allier_tolls_modifier }
+		remove_county_modifier = AUV_upper_allier_tolls_modifier
+	}
+	if = {
+		limit = { has_county_modifier = AUV_upper_allier_compact_modifier }
+		remove_county_modifier = AUV_upper_allier_compact_modifier
+	}
+}
+
+AUV_apply_upper_allier_routes_effect = {
+	AUV_clear_upper_allier_modifiers_effect = yes
+	add_county_modifier = {
+		modifier = AUV_upper_allier_routes_modifier
+		years = 10
+	}
+}
+
+AUV_apply_upper_allier_tolls_effect = {
+	AUV_clear_upper_allier_modifiers_effect = yes
+	add_county_modifier = {
+		modifier = AUV_upper_allier_tolls_modifier
+		years = 10
+	}
+}
+
+AUV_apply_upper_allier_compact_effect = {
+	AUV_clear_upper_allier_modifiers_effect = yes
+	add_county_modifier = {
+		modifier = AUV_upper_allier_compact_modifier
+		years = 10
+	}
+}
+
+AUV_secure_upper_allier_routes_effect = {
+	if = {
+		limit = { has_title = title:c_velay }
+		title:c_velay = { AUV_apply_upper_allier_routes_effect = yes }
+	}
+	if = {
+		limit = { has_title = title:c_gevaudan }
+		title:c_gevaudan = { AUV_apply_upper_allier_routes_effect = yes }
+	}
+}
+
+AUV_extract_upper_allier_tolls_effect = {
+	if = {
+		limit = { has_title = title:c_velay }
+		title:c_velay = { AUV_apply_upper_allier_tolls_effect = yes }
+	}
+	if = {
+		limit = { has_title = title:c_gevaudan }
+		title:c_gevaudan = { AUV_apply_upper_allier_tolls_effect = yes }
+	}
+	add_gold = minor_gold_value
+}
+
+AUV_mediate_upper_allier_rights_effect = {
+	if = {
+		limit = { has_title = title:c_velay }
+		title:c_velay = { AUV_apply_upper_allier_compact_effect = yes }
+	}
+	if = {
+		limit = { has_title = title:c_gevaudan }
+		title:c_gevaudan = { AUV_apply_upper_allier_compact_effect = yes }
+	}
+	add_piety = minor_piety_gain
 }
